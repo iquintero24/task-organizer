@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+:root {
+  /* Colores base */
+  --color-bg: #F5F7FA;
+  /* Fondo principal */
+  --color-text: #333333;
+  /* Texto principal */
+
+  --sections-area-bg: #FAFAFA;
+  /*card area*/
+
+  /* Estados de tareas */
+  --color-pending: #FF6B6B;
+  /* Tareas pendientes */
+  --color-in-progress: #FFD93D;
+  /* Tareas en progreso */
+  --color-completed: #6BCB77;
+  /* Tareas completadas */
+
+  /* Layout */
+  --color-header-bg: #4D96FF;
+  /* Header */
+  --color-footer-bg: #E0E0E0;
+  /* Footer */
+  --color-border: #E0E0E0;
+  /* Bordes y separadores */
+
+  /* Botones */
+  --color-primary-btn: #4D96FF;
+  /* Botones principales */
+  --color-primary-btn-hover: #3B7CD3;
+  /* Botón hover para mejor UX */
+
+  --border-radius: 10px;
+    /* Puedes ajustar el valor */
+
+}
+
+body{
+  background-color: var(--color-bg);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+header{
+  width: 100%;
+  background-color: var(--color-header-bg);
+  padding: 1rem;
+  font-size: 1rem;
+  color: var(--color-text);
+  border-radius: var(--border-radius);
+}
+
+main{
+  width: 100%;
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.container_main{
+  width: 100%;
+  background-color: var(--sections-area-bg);
+  padding: 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+}
