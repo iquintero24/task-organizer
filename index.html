@@ -1,56 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./src/css/style.css" />
-    <title>task_organizar</title>
-  </head>
-  <body>
-    <header>
-      <h3>👋 Hi!</h3>
-      <h1>Welcome your Task organized</h1>
-    </header>
 
-    <main>
-      <h2>task area:</h2>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./src/css/style.css" />
+  <title>task_organizar</title>
+</head>
 
-      <section class="container_main">
-        <article class="staged" id="staged_pending">
-          <div class="header__staged">
-            <p>PENDING:</p>
-            <img src="./public/img/plus-svgrepo-com.svg" width="20" alt="" />
-          </div>
+<body>
+  <header>
+    <h3>👋 Hi!</h3>
+    <h1>Welcome your Task organized</h1>
+  </header>
 
-          <div id="container_task" class="container__class">
-              <p>hola</p>
-          </div>
+  <main>
+    <h2>task area:</h2>
 
-        </article>
+    <section class="container_main">
+      <article class="staged" id="staged_pending">
+        <div class="header__staged">
+          <p>PENDING:</p>
+          <img src="./public/img/plus-svgrepo-com.svg" width="20" alt="" />
+        </div>
 
-        <article class="staged">
-          <div class="header__staged">
-            <p>ON-HOLD:</p>
-            <img src="./public/img/plus-svgrepo-com.svg" width="20" alt="" />
-          </div>
-        </article>
+        <div id="container_task_pending" class="container__class">
+          <p>hola</p>
+        </div>
 
-        <article class="staged">
-          <div class="header__staged">
-            <p>IN-PROGRESS:</p>
-            <img src="./public/img/plus-svgrepo-com.svg" width="20" alt="" />
-          </div>
-        </article>
+      </article>
 
-        <article class="staged">
-          <div class="header__staged">
-            <p>COMPLETED:</p>
-            <img src="./public/img/plus-svgrepo-com.svg" width="20" alt="" />
-          </div>
-        </article>
-      </section>
-    </main>
+      <article class="staged" id="staged_hold">
+        <div class="header__staged">
+          <p>ON-HOLD:</p>
+          <img src="./public/img/plus-svgrepo-com.svg" width="20" alt="" />
+        </div>
 
-    <script type="module" src="./src/js/app.js"></script>
-  </body>
+        <div id="container_task_hold" class="container__class">
+          <p>hola</p>
+        </div>
+
+      </article>
+
+      <article class="staged" id="staged_progress">
+        <div class="header__staged">
+          <p>IN-PROGRESS:</p>
+          <img src="./public/img/plus-svgrepo-com.svg" width="20" alt="" />
+        </div>
+
+        <div id="container_task_progress" class="container__class">
+          <p>hola</p>
+        </div>
+
+      </article>
+
+      <article class="staged" id="staged_completed">
+        <div class="header__staged">
+          <p>COMPLETED:</p>
+          <img src="./public/img/plus-svgrepo-com.svg" width="20" alt="" />
+        </div>
+
+        <div id="container_task_completed" class="container__class">
+          <p>hola</p>
+        </div>
+
+      </article>
+    </section>
+  </main>
+
+  <script type="module" src="./src/js/app.js"></script>
+</body>
+
 </html>
