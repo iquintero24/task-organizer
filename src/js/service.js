@@ -3,7 +3,8 @@
 
 const url = "http://localhost:3000/tasks";
 
-async function getData() {
+export async function getData() {
+  debugger;
   try {
     const response = await fetch(url);
     if (!response.ok) {
@@ -11,9 +12,8 @@ async function getData() {
     }
 
     const json = await response.json();
-    console.log(json);
+    return json;
   } catch (error) {
     console.error(error.message);
   }
 }
-
