@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-*{
+/* 🔧 General reset and base font */
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -8,45 +9,36 @@
 }
 
 :root {
-  /* Colores base */
+  /* 🎨 Base Colors */
   --color-bg: #F5F7FA;
-  /* Fondo principal */
+  /* Main background */
   --color-text: #333333;
-  /* Texto principal */
-
+  /* Primary text color */
   --sections-area-bg: #FAFAFA;
-  /*card area*/
+  /* Background for task sections */
 
-  /* Estados de tareas */
+  /* 📌 Task status colors */
   --color-pending: #FF6B6B;
-  /* Tareas pendientes */
+  --color-on-hold: #6C63FF;
   --color-in-progress: #FFD93D;
-  /* Tareas en progreso */
   --color-completed: #6BCB77;
-  /* Tareas completadas */
 
-  /* Layout */
+  /* 🧱 Layout */
   --color-header-bg: #4D96FF;
-  /* Header */
   --color-footer-bg: #E0E0E0;
-  /* Footer */
   --color-border: #E0E0E0;
-  /* Bordes y separadores */
-
-  /* Botones */
-  --color-primary-btn: #4D96FF;
-  /* Botones principales */
-  --color-primary-btn-hover: #3B7CD3;
-  /* Botón hover para mejor UX */
-
   --border-radius: 10px;
-    /* Puedes ajustar el valor */
 
+  /* 🔘 Buttons */
+  --color-primary-btn: #4D96FF;
+  --color-primary-btn-hover: #3B7CD3;
+
+  /* 🗂 Column background */
   --color-staged: #D6E4FF;
-
 }
 
-body{
+/* 🔲 Body layout */
+body {
   background-color: var(--color-bg);
   padding: 1rem;
   display: flex;
@@ -54,7 +46,8 @@ body{
   gap: 1rem;
 }
 
-header{
+/* 🧱 Header styling */
+header {
   width: 100%;
   background-color: var(--color-header-bg);
   padding: 1rem;
@@ -63,7 +56,8 @@ header{
   border-radius: var(--border-radius);
 }
 
-main{
+/* 🧾 Main content */
+main {
   width: 100%;
   background-color: var(--color-bg);
   border: 1px solid var(--color-border);
@@ -74,7 +68,8 @@ main{
   gap: 1rem;
 }
 
-.container_main{
+/* 📦 Task board container */
+.container_main {
   width: 100%;
   background-color: var(--sections-area-bg);
   padding: 1rem;
@@ -82,53 +77,195 @@ main{
   border-radius: var(--border-radius);
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-.staged{
+/* 🗃️ Each task status section */
+.staged {
   background-color: var(--color-staged);
   padding: 1rem;
-  width: 24%;
+  width: auto;
   border-radius: var(--border-radius);
   color: var(--color-text);
   display: flex;
   flex-direction: column;
   gap: 1rem;
-
-  & .header__staged{
-    display: flex;
-    justify-content: space-between;
-
-    & img:hover{
-      cursor: pointer;
-    }
-
-  }
-
 }
 
-.container__class{
+.staged .header__staged {
+  display: flex;
+  justify-content: space-between;
+}
+
+.staged .header__staged img:hover {
+  cursor: pointer;
+}
+
+/* 💬 Container for task cards */
+.container__class {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-
-.card__example{
+/* 📝 Task card */
+.card__example {
   width: 100%;
   background-color: var(--color-pending);
+  /* You could customize this dynamically */
   border-radius: var(--border-radius);
   padding: 1rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
 
-  & .title__and__time{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    
+/* 🎨 Background color changes depending on task status */
+.card__example.pending {
+  background-color: var(--color-pending);
+}
+
+.card__example.on-hold {
+  background-color: var(--color-on-hold);
+}
+
+.card__example.in-progress {
+  background-color: var(--color-in-progress);
+}
+
+.card__example.completed {
+  background-color: var(--color-completed);
+}
+
+
+.card__example .title__and__time {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card__example .description__title {
+  width: 100%;
+}
+
+/* 💬 Modal overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(128, 128, 128, 0.7);
+  /* semi-transparent gray */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* 📋 Modal content */
+.modal {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+/* 📝 Form inside modal */
+form {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+form input,
+form textarea,
+form select {
+  width: 100%;
+  border: 1px solid black;
+  border-radius: var(--border-radius);
+  height: 2rem;
+}
+
+/* 🔘 Button section */
+form .section__button {
+  width: 100%;
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: space-between;
+}
+
+.section__button button {
+  padding: 0.5rem;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-primary-btn);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.section__button button:hover {
+  background-color: var(--color-primary-btn-hover);
+}
+
+/* ❌ Close button */
+#botonCerrar,
+#closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border-radius: var(--border-radius);
+  padding: 0.5rem;
+  border: 1px solid var(--color-border);
+  background-color: white;
+  cursor: pointer;
+}
+
+/* 🔒 Utility class */
+.hidden {
+  display: none;
+}
+
+.footer {
+  width: 100%;
+  background-color: var(--color-footer-bg);
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  border-radius: var(--border-radius);
+  font-size: 0.9rem;
+  color: var(--color-text);
+}
+
+.footer a {
+  color: var(--color-primary-btn);
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* 💻 Responsive modal width */
+
+@media (min-width:767px) {
+  .modal {
+    width: 50%;
   }
+}
 
-  & .description__title{
-    width: 100%;
+
+@media (min-width: 992px) {
+  .modal {
+    width: 50%;
   }
-
 }
