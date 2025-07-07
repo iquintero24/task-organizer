@@ -24,9 +24,9 @@ The interface allows users to create, edit, delete, and categorize tasks in a cl
 
 ## 👤 Coder Info
 
-Created by **[Your Name]**  
-🔗 GitHub: [@yourusername](https://github.com/yourusername)  
-📧 Email: your.email@example.com
+Created by **[Isaac Quintero]**  
+🔗 GitHub: [Isaac Quintero](https://github.com/yourusername)  
+📧 Email: isaacquintero4k@gmail.com
 
 ---
 
